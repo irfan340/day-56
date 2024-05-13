@@ -11,6 +11,7 @@ import UpdateCoffee from './Components/UpdateCoffee.jsx';
 import SingUp from './Components/SingUp.jsx';
 import SignIn from './Components/SignIn.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import User from './Components/User.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
   {
     path:'/signin',
     element: <SignIn></SignIn>
+  },
+  {
+    path: '/user',
+    element:<User></User>,
+    loader:()=>fetch('http://localhost:3000/user')
   }
 ]);
 
